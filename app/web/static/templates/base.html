@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdTech Personalized Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="{{ url_for('main.static', filename='js/main.js') }}"></script>
+</body>
+</html>
+edtech-personalized-learning-assistant/app/web/templates/index.html
+code
+Html
+{% extends "base.html" %}
+
+{% block content %}
+<h1>EdTech Personalized Learning Assistant</h1>
+
+<div class="section">
+    <h2>Generate a Quiz</h2>
+    <form id="quiz-form">
+        <input type="text" id="topic" placeholder="Enter a topic">
+        <button type="submit">Generate Quiz</button>
+    </form>
+    <pre id="quiz-output"></pre>
+</div>
+
+<div class="section">
+    <h2>Get Learning Recommendation</h2>
+    <form id="recommendation-form">
+        <input type="text" id="student_id" placeholder="Enter Student ID">
+        <button type="submit">Get Recommendation</button>
+    </form>
+    <pre id="recommendation-output"></pre>
+</div>
